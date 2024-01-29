@@ -1,4 +1,19 @@
+:root{
+    --text: #000000;
+    --background: #404cd5;
+    --background-darker: #0b0578;
+    --primary: #7EB1F7;
+    --secondary: #ec58c3;
+    --accent: #f69f00;
+}
+
 #grad{
-    background-image: linear-gradient(red, blue);
-    height: ;
+    background-image: linear-gradient(var(--primary), var(--background), var(--background-darker));
+    height: 780px;
+}
+
+h1{
+    text-align: center;
+    color: white;
+
 }

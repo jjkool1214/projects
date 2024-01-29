@@ -1,13 +1,10 @@
-async function logQuotes(){
+async function logUsers(){
     const response = await fetch("https://jackb.dev/api/users")
-    const people = response.json()
-    console.log(people)
-    let promiseB = response.then(something(result) {
-        return result + 1
-    });
-    
-    return response
+    const people = await response.json()
+    let index = Math.floor(Math.random()*(words.length-1) + 1)
+    return people[index]['id']
 }
 
 
-console.log(newFunction())
+
+logUsers()
