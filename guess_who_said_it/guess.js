@@ -1,7 +1,13 @@
 async function logQuotes(){
     const response = await fetch("https://jackb.dev/api/users")
-    const quotes = response.json()
-    console.log(quotes)
+    const people = response.json()
+    console.log(people)
+    let promiseB = response.then(something(result) {
+        return result + 1
+    });
+    
+    return response
 }
 
-logQuotes()
+
+console.log(newFunction())
