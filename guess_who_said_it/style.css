@@ -25,10 +25,11 @@ html{
 #input-box{
     background-color: gray;
     color: var(--text);
-    margin-left: 0 auto;
     height: 50px;
-    width: 400px;
+    width: 450px;
     border-radius: 100px;
+    text-align: center;
+    font-size: 36px;
 }
 
 #answers{
@@ -36,9 +37,8 @@ html{
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
-    margin-top:10%;
-    margin-bottom: 10%;
-
+    position: absolute;
+    margin-left: 35%;
 }
 
 #quote-holder{
@@ -49,8 +49,6 @@ html{
 }
 
 #quote{
-    display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     align-content: center;
     margin-top: 10%;

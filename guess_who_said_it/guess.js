@@ -22,12 +22,9 @@ async function getQuotes(id_discord){
 async function delete_words(message){
     let new_message = await message
     console.log(new_message)
-    let index = new_message.lastIndexOf("\"")
+    let index = new_message.lastIndexOf("@")
     console.log(index)
-    if(index == -1){
-        index = new_message.lastIndexOf("\”")
-    }
-    let final_quote = new_message.substring(0, index+1)
+    let final_quote = new_message.substring(0, index-2)
     var regex = new RegExp("\:(.*)\:")
     let actualFinal = final_quote.replace(regex, "")
     console.log(actualFinal)
