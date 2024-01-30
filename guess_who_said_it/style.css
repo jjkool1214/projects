@@ -7,13 +7,54 @@
     --accent: #f69f00;
 }
 
-#grad{
-    background-image: linear-gradient(var(--primary), var(--background), var(--background-darker));
-    height: 780px;
+body{
+    background-color: var(--background);
+    height:100%;
 }
 
 h1{
     text-align: center;
-    color: white;
+    color: var(--text);
+    font-size: 72px;
+}
 
+html{
+    height: 100%;
+}
+
+#input-box{
+    background-color: gray;
+    color: var(--text);
+    margin-left: 0 auto;
+    height: 50px;
+    width: 400px;
+    border-radius: 100px;
+}
+
+#answers{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    margin-top:10%;
+    margin-bottom: 10%;
+
+}
+
+#quote-holder{
+    color: var(--text);
+    justify-content: center;
+    align-content: center;
+    font-size: large;
+}
+
+#quote{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    margin-top: 20%;
+    margin-bottom: 20%;
+    font-size: 48px;
+    text-align: center;
 }
