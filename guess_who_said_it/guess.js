@@ -1,9 +1,31 @@
+var answer = ""
+
+const id_match = {214028075103551488:"jack",
+ 395686692306157581:"mary ann", 
+ 170700476797550593:"max",
+ 526203167277318144:"sam",
+ 897988508948500503:"amy",
+ 698766259243974716:"kiera",
+ 454722441780920330:"jaysen",
+ 1124053366620823732:"dr. penis",
+ 441708884378517514:"dante",
+ 563795184584884225:"jared",
+ 703278178944417853:"owen",
+ 426074685340647424:"gio",
+ 731634573317767275:"parker",
+ 326871348787937280:"osiris",
+ 674027373271973930:"yoav",
+ 103645714340388864:"evan"
+}
+
 async function logUser(){
     const response = await fetch("https://jackb.dev/api/users")
     const people = await response.json()
     let index = Math.floor(Math.random()*(people.length - 1) + 1)
-    let id = await people[index]['id']
+    const id = await people[index]['id'];
     console.log(id)
+    console.log(id_match[id])
+    answer = id_match[id]
     return  id
 }
 
@@ -33,3 +55,10 @@ async function delete_words(message){
 }
 
 quote = delete_words(getQuotes(logUser()))
+
+function check_guess(){
+    console.log(guess)
+    console.log(answer)
+}
+
+check_guess()

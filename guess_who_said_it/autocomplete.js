@@ -15,7 +15,9 @@ document.addEventListener("keyup", (e) => {
 
     if(e.code == "Enter"){
         input = document.getElementById("actual-text")
-
+        guess = input.innerText
+        input.innerText = ""
+        check_guess()
     }
 
 }) 
