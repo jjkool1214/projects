@@ -1,7 +1,54 @@
+
+
+
+                
+
 #love_words{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    color: white;
+    font-size: 36px;
+    text-align: center;
+    margin-left: 5%;
+    margin-right: 5%;
+    border: 10px;
+}
+
+#lovey_dovey_stuff{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
 }
 
 body{
-    background-color: #FF1d2C;
+    background-image: linear-gradient(rgb(255, 19, 2), rgb(245, 47, 228), rgb(243, 158, 158), rgb(172, 15, 15));
+}
+
+h1{
+    color:white;
+    text-align: center;
+    font-family: 'Romantic', sans-serif;
+    font-size: 60px;
+}
+
+#button-holder{
+    display: flex;
+    flex-direction: wrap;
+    justify-content: center;
+}
+
+#compliments-page{
+    justify-content: center;
+    align-content: center;
+    margin-right:35%;
+}
+
+.funny-button{
+    height:150px;
+    width: 300px;
+    border-radius: 200px;
+    font-size: 24px;
+    background-image:linear-gradient(90deg, red, rgb(219, 134, 148), red);
+    color:rgb(252, 252, 252);
+    font-family: 'Romantic', sans-serif;
 }
