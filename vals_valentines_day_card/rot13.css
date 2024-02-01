@@ -21,8 +21,46 @@ html{
 #input{
     display: flex;
     flex-direction: column;
+    margin-right: 10%;
 }
 
 #br{
     height: 200px
+}
+
+#rotation-number-holder{
+    display: flex;
+    flex-direction: row;
+    border-radius: 50px;
+    width:400px;
+    text-align: center;
+    font-family: 'Romantic', sans-serif;
+    font-size: 24px;
+
+    justify-content: center;
+}
+
+#label-for-rot{
+    justify-content: center;
+    align-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+#centering-part{
+    display: flex;
+    flex-direction: row;
+    margin-top: 50%;
+    width: 300px
+}
+
+#dropdown-text{
+    margin-right: 2.5%;
+    width: 400px;
+}
+
+#results{
+    margin-left: 10%;
 }

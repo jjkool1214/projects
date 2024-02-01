@@ -5,6 +5,9 @@
         <title>Rotation 13</title>
         <link href="rot13.css" rel="stylesheet">
         <script src="rot13.js"></script>
+        <style>
+            @import url('https://fonts.cdnfonts.com/css/romantic');
+        </style>
     </head>
     <body>
         <h1>Rotation Maker</h1>
@@ -15,7 +18,43 @@
                 <h3>Type words in here</h3>
                 <div id="word-holder"></div>
             </div>
-            <div id="rotation-number"></div>
+            <div id="rotation-number-holder">
+                <div id="centering-part">
+                    <h3 id="dropdown-text">Select a rotation number</h3>
+                    <select name="rotation-numbers" id="rotation-number"> 
+                        <option value=1>1</option> 
+                        <option value=2>2</option> 
+                        <option value=3>3</option> 
+                        <option value=4>4</option> 
+                        <option value=5>5</option> 
+                        <option value=6>6</option> 
+                        <option value=7>7</option> 
+                        <option value=8>8</option> 
+                        <option value=9>9</option> 
+                        <option value=10>10</option> 
+                        <option value=11>11</option> 
+                        <option value=12>12</option> 
+                        <option value=13>13</option> 
+                        <option value=14>14</option> 
+                        <option value=15>15</option> 
+                        <option value=16>16</option> 
+                        <option value=17>17</option> 
+                        <option value=18>18</option> 
+                        <option value=19>19</option> 
+                        <option value=20>20</option> 
+                        <option value=21>21</option>
+                        <option value=22>22</option>  
+                        <option value=23>23</option> 
+                        <option value=24>24</option> 
+                        <option value=25>25</option> 
+                    </select>
+                </div>
+            </div>
+            <div id="results">
+                <div id="results-output">
+                    <h3>Results printed here</h3>
+                </div>
+            </div>
         </div>
     </body>
 </html>
