@@ -1,6 +1,6 @@
 var answer = ""
 
-const id_match = {214028075103551488:"jack",
+var id_match = {214028075103551488:"jack",
  395686692306157581:"mary ann", 
  170700476797550593:"max",
  526203167277318144:"sam",
@@ -23,8 +23,9 @@ async function logUser(){
     const people = await response.json()
     let index = Math.floor(Math.random()*(people.length - 1) + 1)
     const id = await people[index]['id'];
+    let id_val = id
     console.log(id)
-    console.log(id_match[id])
+    console.log(id_match[id_val])
     answer = id_match[id]
     return  id
 }
