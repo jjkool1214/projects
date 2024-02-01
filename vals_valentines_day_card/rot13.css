@@ -1,0 +1,28 @@
+h1{
+    text-align: center;
+    font-size: 48px;
+}
+
+body{
+    background-image: linear-gradient(red, rgb(244, 101, 101), rgb(249, 180, 180), rgb(249, 102, 102), red);
+}
+
+html{
+    height: 100%;
+}
+
+#input-output{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+}
+
+#input{
+    display: flex;
+    flex-direction: column;
+}
+
+#br{
+    height: 200px
+}
