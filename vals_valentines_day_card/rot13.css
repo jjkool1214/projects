@@ -4,7 +4,7 @@ h1{
 }
 
 body{
-    background-image: linear-gradient(red, rgb(244, 101, 101), rgb(249, 180, 180), rgb(249, 102, 102), red);
+    background-image: linear-gradient( rgb(244, 101, 101), rgb(249, 180, 180), rgb(249, 102, 102), red);
 }
 
 html{
@@ -36,8 +36,19 @@ html{
     text-align: center;
     font-family: 'Romantic', sans-serif;
     font-size: 24px;
-
+    align-content: center;
     justify-content: center;
+}
+
+#rotation-number{
+    border-radius: 100px;
+    height:50px;
+    margin-top: 10%;
+    background-color: pink;
+    width:100px;
+    text-align: center;
+    font-family: 'Romantic', sans-serif;
+    font-size: 24px;
 }
 
 #label-for-rot{
@@ -52,15 +63,33 @@ html{
 #centering-part{
     display: flex;
     flex-direction: row;
-    margin-top: 50%;
-    width: 300px
+    margin-top: 60%;
+    width: 300px;
+    margin-right:10%;
 }
 
-#dropdown-text{
-    margin-right: 2.5%;
+#dropdown-menu{
     width: 400px;
 }
 
-#results{
+#results-output{
     margin-left: 10%;
+    display: flex;
+    flex-direction: column;
+    width:400px;
+}
+
+.word-holder{
+    background-color: gray;
+    height:400px;
+    margin-top: 10%;
+    width:400px;
+    border-radius: 50px;
+    border-color: black;
+}
+
+.title-of-box{
+    text-align: center;
+    font-size: 48px;
+    margin-bottom: 0%;
 }
