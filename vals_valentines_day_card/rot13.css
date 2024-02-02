@@ -86,10 +86,31 @@ html{
     width:400px;
     border-radius: 50px;
     border-color: black;
+    
+    /*text box word*/
+    text-align: center;
+    
 }
 
 .title-of-box{
     text-align: center;
     font-size: 48px;
     margin-bottom: 0%;
+}
+
+.funny-button{
+    height:100px;
+    width: 200px;
+    border-radius: 200px;
+    font-size: 24px;
+    background-image:linear-gradient(90deg, red, rgb(219, 134, 148), red);
+    color:rgb(252, 252, 252);
+    font-family: 'Romantic', sans-serif;
+}
+
+#button-back{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
