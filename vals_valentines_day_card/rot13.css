@@ -114,3 +114,17 @@ html{
     justify-content: center;
     align-items: center;
 }
+
+#word-holder-input{
+    justify-content: center;
+    align-content: center;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#typing-place{
+    height:300px;
+    width: 300px;
+    font-family: 'Romantic', sans-serif;
+    font-size: 24px;
+}
