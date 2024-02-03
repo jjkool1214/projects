@@ -1,13 +1,16 @@
 function rotateLetter(rotation){
-    let input = document.getElementById("actual-input-text-area").innerText
-    let results = new Array(input.length)
+    let input = document.getElementById("actual-input-text-area").value
+    console.log(input)
+    const results = []
+    console.log(results)
     for(let i = 0; i < input.length; i++){
-        let charVal = input.charCodeAt(i) + rotation
+        let currentCharVal = input.charCodeAt(i)
+        let charVal = ((rotation-1) + currentCharVal) + 1
         if(charVal + rotation > 90 && charVal < 91){
             charVal -= 26
-            results.push(charVal)
+            results[i] = charVal
         } else {
-            results.push(charVal)
+            results[i] = charVal
         }
     }
     console.log(results)
@@ -16,12 +19,12 @@ function rotateLetter(rotation){
 }
 
 
-
 document.addEventListener("click", (e) => {
     let currentVal = 1;
     if(e.target.value != currentVal){
         currentVal = e.target.value
         console.log(currentVal)
         rotateLetter(currentVal)
-    }w
+    }
 })
+
