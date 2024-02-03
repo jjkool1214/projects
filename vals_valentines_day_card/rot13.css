@@ -86,7 +86,10 @@ html{
     width:400px;
     border-radius: 50px;
     border-color: black;
-    
+    justify-content: center;
+    align-content: center;
+    display: flex;
+    flex-wrap: wrap;
     /*text box word*/
     text-align: center;
     
@@ -115,16 +118,13 @@ html{
     align-items: center;
 }
 
-#word-holder-input{
-    justify-content: center;
-    align-content: center;
-    display: flex;
-    flex-wrap: wrap;
-}
 
-#typing-place{
+.typing-place{
     height:300px;
     width: 300px;
     font-family: 'Romantic', sans-serif;
     font-size: 24px;
+    resize: none;
 }
+
+
