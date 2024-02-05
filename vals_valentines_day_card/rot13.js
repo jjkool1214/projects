@@ -1,21 +1,25 @@
-function rotateLetter(rotation){
+const alphabet = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"
+
+function rotateLetter(rotation=0){
     let input = document.getElementById("actual-input-text-area").value
-    console.log(input)
-    const results = []
-    console.log(results)
+    let index = 0
+    let result = ''
     for(let i = 0; i < input.length; i++){
-        let currentCharVal = input.charCodeAt(i)
-        let charVal = ((rotation-1) + currentCharVal) + 1
-        if(charVal + rotation > 90 && charVal < 91){
-            charVal -= 26
-            results[i] = charVal
-        } else {
-            results[i] = charVal
+        let char = input[i].toLowerCase()
+        if(char.match(/[a-z]/)){
+            index = parseInt(alphabet.indexOf(char))
+            console.log(index)
+            index += parseInt(rotation)
+            console.log(index)
+            if(char == input[i]){
+                result += alphabet[index]
+            } else {
+                result += alphabet[index].toUpperCase()
+            }
         }
     }
-    console.log(results)
-    let showOutput = document.getElementById("results-print")
-    showOutput.innerText = String.fromCharCode(results)
+    console.log(result)
+    document.getElementById("output").innerText = result
 }
 
 
@@ -24,7 +28,9 @@ document.addEventListener("click", (e) => {
     if(e.target.value != currentVal){
         currentVal = e.target.value
         console.log(currentVal)
+        console.log(document.getElementById("actual-input-text-area").value)
         rotateLetter(currentVal)
     }
 })
+
 
