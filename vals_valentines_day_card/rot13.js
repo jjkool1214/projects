@@ -6,6 +6,10 @@ function rotateLetter(rotation=0){
     let result = ''
     for(let i = 0; i < input.length; i++){
         let char = input[i].toLowerCase()
+        if(char == " "){
+            result += char
+            continue
+        }
         if(char.match(/[a-z]/)){
             index = parseInt(alphabet.indexOf(char))
             console.log(index)
@@ -22,15 +26,13 @@ function rotateLetter(rotation=0){
     document.getElementById("output").innerText = result
 }
 
-
-document.addEventListener("click", (e) => {
-    let currentVal = 1;
-    if(e.target.value != currentVal){
-        currentVal = e.target.value
-        console.log(currentVal)
-        console.log(document.getElementById("actual-input-text-area").value)
-        rotateLetter(currentVal)
-    }
+document.addEventListener("keyup", () => {
+    let currentVal = document.getElementById("rotation-number").value
+    console.log(currentVal)
+    console.log(document.getElementById("actual-input-text-area").value)
+    rotateLetter(currentVal)
 })
+
+
 
 
