@@ -26,11 +26,13 @@ function rotateLetter(rotation=0){
     document.getElementById("output").innerText = result
 }
 
-document.addEventListener("keyup", () => {
-    let currentVal = document.getElementById("rotation-number").value
-    console.log(currentVal)
-    console.log(document.getElementById("actual-input-text-area").value)
-    rotateLetter(currentVal)
+let rotateButton = 
+
+document.addEventListener("click", (e) => {
+    if(e.target = document.getElementById("rotate-go")){
+        let currentValue = document.getElementById("rotation-number").value
+        rotateLetter(currentValue)
+    }
 })
 
 

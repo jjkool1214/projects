@@ -109,6 +109,7 @@ html{
     background-image:linear-gradient(90deg, red, rgb(219, 134, 148), red);
     color:rgb(252, 252, 252);
     font-family: 'Romantic', sans-serif;
+    margin-bottom: 30%;
 }
 
 #button-back{
@@ -127,4 +128,9 @@ html{
     resize: none;
 }
 
+#column-thingy{
+    display: flex;
+    flex-direction: column;
+    margin-right:35%;
 
+}
