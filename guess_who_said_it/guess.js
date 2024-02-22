@@ -1,5 +1,8 @@
 let answer = ""
 
+let score = 0
+let prev_answers = []
+
 const id_match = {
     "214028075103551488":"jack",
     "395686692306157581":"mary ann", 
@@ -39,23 +42,43 @@ async function getQuotes(id_discord){
     const response = await fetch(thing)
     console.log(response)
     const quotes = await response.json()
+    quote = quotes[Math.floor(Math.random()*(quotes.length))]['message']
     return quotes[Math.floor(Math.random()*(quotes.length))]['message']
 }
 
 async function delete_words(message){
+    
     let new_message = await message
-    console.log(new_message)
-    let index = new_message.lastIndexOf("@")
-    console.log(index)
-    let final_quote = new_message.substring(0, index-2)
-    var regex = new RegExp("\:(.*)\:")
-    let actualFinal = final_quote.replace(regex, "")
-    console.log(actualFinal)
-    block = document.getElementById("quote")
-    block.innerText = actualFinal
+    if(checkNotPrevSeen(new_message)){
+        console.log(new_message)
+        let index = new_message.lastIndexOf("@")
+        console.log(index)
+        let final_quote = new_message.substring(0, index-2)
+        var regex = new RegExp("\:(.*)\:")
+        let actualFinal = final_quote.replace(regex, "")
+        console.log(actualFinal)
+        block = document.getElementById("quote")
+        block.innerText = actualFinal
+        prev_answers += actualFinal
+    } else {
+        getQuotes()
+    }
+
 }
 
-quote = delete_words(getQuotes(logUser()))
+function getQuote(){
+    return delete_words(getQuotes(logUser()))
+}
+
+function checkNotPrevSeen(quote){
+    for(let i = 0; i < prev_answers.length; i++){
+        if(quote == prev_answers[i]){
+            return false
+        }
+    }
+    return true
+}
+
 
 function check_guess(guess, answer){
     return guess == answer
@@ -80,11 +103,20 @@ function checkInValues(input){
 
 function game(validWord){
     if(validWord){
-        if(validWord == answer){
-            
+        if(document.getElementById("answer").value == answer){
+            score++;
+            document.getElementById("score").innerText = "Score : " + score
+            document.getElementById("answer").value = ""
+            document.getElementById("game-message").innerText = "Good shit yodie gang"
+            getQuote()
+        } else {
+            document.getElementById("answer").value = ""
+            document.getElementById("game-message").innerText = "womp womp"
+            getQuote()
         }
     } else {
         document.getElementById("game-message").innerText = "Thats not a person here, fucko"
+        document.getElementById("answer").value = ""
     }
 }
 
@@ -93,5 +125,10 @@ document.addEventListener("keyup", (e) => {
         console.log(document.getElementById("answer").value)
         console.log(Object.values(id_match))
         console.log(checkInValues(document.getElementById("answer").value))
+        game(checkInValues(document.getElementById("answer").value))
     }
 })
+
+getQuote()
+
+document.getElementById("score").innerText = "Score : " + score
