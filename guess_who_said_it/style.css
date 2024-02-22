@@ -25,7 +25,7 @@ html{
 #input-box{
     background-color: gray;
     color: var(--text);
-    height: 50px;
+    height: 50px; 
     width: 450px;
     border-radius: 100px;
     text-align: center;
@@ -34,7 +34,7 @@ html{
 
 #answers{
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
     justify-content: center;
     align-content: center;
     position: absolute;
@@ -51,8 +51,26 @@ html{
 #quote{
     justify-content: center;
     align-content: center;
-    margin-top: 10%;
-    margin-bottom: 10%;
+    margin-top: 7.5%;
+    margin-bottom: 7.5%;
     font-size: 48px;
     text-align: center;
+}
+
+#answer{
+    border-radius: 50px;
+    width:400px;
+    height: 100px;
+    font-size: 48px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+}
+
+#score-holder{
+    text-align: center;
+    margin-top: 5%;
+}
+
+#game-message{
+    font-size: 60px;
 }

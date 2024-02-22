@@ -1,21 +1,22 @@
-var answer = ""
+let answer = ""
 
-var id_match = {214028075103551488:"jack",
- 395686692306157581:"mary ann", 
- 170700476797550593:"max",
- 526203167277318144:"sam",
- 897988508948500503:"amy",
- 698766259243974716:"kiera",
- 454722441780920330:"jaysen",
- 1124053366620823732:"dr. penis",
- 441708884378517514:"dante",
- 563795184584884225:"jared",
- 703278178944417853:"owen",
- 426074685340647424:"gio",
- 731634573317767275:"parker",
- 326871348787937280:"osiris",
- 674027373271973930:"yoav",
- 103645714340388864:"evan"
+const id_match = {
+    "214028075103551488":"jack",
+    "395686692306157581":"mary ann", 
+    "170700476797550593":"max",
+    "526203167277318144":"sam",
+    "897988508948500503":"amy",
+    "698766259243974716":"kiera",
+    "454722441780920330":"jaysen",
+    "1124053366620823732":"dr. penis",
+    "441708884378517514":"dante",
+    "563795184584884225":"jared",
+    "703278178944417853":"owen",
+    "426074685340647424":"gio",
+    "731634573317767275":"parker",
+    "326871348787937280":"osiris",
+    "674027373271973930":"yoav",
+    "103645714340388864":"evan"
 }
 
 async function logUser(){
@@ -26,8 +27,8 @@ async function logUser(){
     let id_val = id
     console.log(id)
     console.log(id_match[id_val])
-    answer = id_match[id]
-    return  id
+    answer = id_match[id_val]
+    return id
 }
 
 async function getQuotes(id_discord){
@@ -38,8 +39,7 @@ async function getQuotes(id_discord){
     const response = await fetch(thing)
     console.log(response)
     const quotes = await response.json()
-    let message_1 = quotes[Math.floor(Math.random()*(quotes.length))]['message']
-    return message_1
+    return quotes[Math.floor(Math.random()*(quotes.length))]['message']
 }
 
 async function delete_words(message){
@@ -57,9 +57,41 @@ async function delete_words(message){
 
 quote = delete_words(getQuotes(logUser()))
 
-function check_guess(){
-    console.log(guess)
-    console.log(answer)
+function check_guess(guess, answer){
+    return guess == answer
 }
 
 check_guess()
+
+async function getAnswer(){
+    let id = await logUser();
+    answer = id_match[id]
+    return answer
+}
+
+function checkInValues(input){
+    for(let i = 0; i <= Object.values(id_match).length; i++){
+        if(input == Object.values(id_match)[i]){
+            return true;
+        }
+    }
+    return false;
+}
+
+function game(validWord){
+    if(validWord){
+        if(validWord == answer){
+            
+        }
+    } else {
+        document.getElementById("game-message").innerText = "Thats not a person here, fucko"
+    }
+}
+
+document.addEventListener("keyup", (e) => {
+    if(e.code == "Enter"){
+        console.log(document.getElementById("answer").value)
+        console.log(Object.values(id_match))
+        console.log(checkInValues(document.getElementById("answer").value))
+    }
+})
