@@ -76,6 +76,9 @@ function checkNotPrevSeen(quote){
             return false
         }
     }
+    if(prev_answers.length > 20){
+        prev_answers = []
+    }
     return true
 }
 
@@ -94,7 +97,7 @@ async function getAnswer(){
 
 function checkInValues(input){
     for(let i = 0; i <= Object.values(id_match).length; i++){
-        if(input == Object.values(id_match)[i]){
+        if(input.toLowerCase() == Object.values(id_match)[i]){
             return true;
         }
     }
@@ -103,7 +106,8 @@ function checkInValues(input){
 
 function game(validWord){
     if(validWord){
-        if(document.getElementById("answer").value == answer){
+        let word = String(document.getElementById("answer").value)
+        if( word.toLowerCase() == answer){
             score++;
             document.getElementById("score").innerText = "Score : " + score
             document.getElementById("answer").value = ""
