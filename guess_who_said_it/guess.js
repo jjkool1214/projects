@@ -31,7 +31,7 @@ async function logUser(){
     console.log(id)
     console.log(id_match[id_val])
     answer = id_match[id_val]
-    return id
+    return id;
 }
 
 async function getQuotes(id_discord){
