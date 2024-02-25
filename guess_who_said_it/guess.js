@@ -109,8 +109,9 @@ function game(validWord){
             document.getElementById("game-message").innerText = "Good shit yodie gang"
             getQuote()
         } else {
+            let lastanswer = answer
             document.getElementById("answer").value = ""
-            document.getElementById("game-message").innerText = "womp womp the last answer was " + answer
+            document.getElementById("game-message").innerText = "womp womp the last answer was " + lastanswer
             getQuote()
         }
     } else {
