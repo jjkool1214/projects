@@ -76,6 +76,9 @@ function checkNotPrevSeen(quote){
             return false
         }
     }
+    if(prev_answers.length > 50){
+        prev_answers = []
+    }
     prev_answers[prev_answers.length - 1] = quote
     return true
 }
