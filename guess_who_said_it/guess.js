@@ -1,5 +1,5 @@
 let answer = ""
-
+let lastanswer = ""
 let score = 0
 let prev_answers = []
 
@@ -60,6 +60,7 @@ async function delete_words(message){
         block = document.getElementById("quote")
         block.innerText = actualFinal
         prev_answers += actualFinal
+        lastanswer = answer
     } else {
         getQuote()
     }
@@ -109,7 +110,6 @@ function game(validWord){
             document.getElementById("game-message").innerText = "Good shit yodie gang"
             getQuote()
         } else {
-            let lastanswer = answer
             document.getElementById("answer").value = ""
             document.getElementById("game-message").innerText = "womp womp the last answer was " + lastanswer
             getQuote()
