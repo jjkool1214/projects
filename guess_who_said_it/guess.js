@@ -110,7 +110,7 @@ function game(validWord){
             getQuote()
         } else {
             document.getElementById("answer").value = ""
-            document.getElementById("game-message").innerText = "womp womp"
+            document.getElementById("game-message").innerText = "womp womp the last answer was " + answer
             getQuote()
         }
     } else {
