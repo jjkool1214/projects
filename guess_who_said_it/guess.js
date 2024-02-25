@@ -1,5 +1,4 @@
 let answer = ""
-let lastanswer = ""
 let score = 0
 let prev_answers = []
 
@@ -111,7 +110,7 @@ function game(validWord){
             getQuote()
         } else {
             document.getElementById("answer").value = ""
-            document.getElementById("game-message").innerText = "womp womp the last answer was " + lastanswer
+            document.getElementById("game-message").innerText = "womp womp"
             getQuote()
         }
     } else {
