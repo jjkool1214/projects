@@ -61,13 +61,13 @@ async function delete_words(message){
         block.innerText = actualFinal
         prev_answers += actualFinal
     } else {
-        getQuotes()
+        getQuote()
     }
 
 }
 
 function getQuote(){
-    return delete_words(getQuotes(logUser()))
+    delete_words(getQuotes(logUser()))
 }
 
 function checkNotPrevSeen(quote){
@@ -76,18 +76,10 @@ function checkNotPrevSeen(quote){
             return false
         }
     }
-    if(prev_answers.length > 20){
-        prev_answers = []
-    }
+    prev_answers[prev_answers.length - 1] = quote
     return true
 }
 
-
-function check_guess(guess, answer){
-    return guess == answer
-}
-
-check_guess()
 
 async function getAnswer(){
     let id = await logUser();
